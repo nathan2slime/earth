@@ -5,8 +5,8 @@ import {
   AnimatePresence,
   motion,
   useInView,
-  UseInViewOptions,
-  Variants,
+  type UseInViewOptions,
+  type Variants,
 } from "framer-motion";
 
 type MarginType = UseInViewOptions["margin"];
@@ -44,6 +44,7 @@ export default function BlurFade({
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   };
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const combinedVariants = variant || defaultVariants;
   return (
     <AnimatePresence>
