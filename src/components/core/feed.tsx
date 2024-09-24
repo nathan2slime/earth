@@ -5,10 +5,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectFade, Navigation } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper/types'
 import { useRef, useState } from 'react'
+import { format } from 'date-fns'
 
 import { cn } from '~/lib/utils'
 import { Lens } from '~/components/magicui/lens'
 import { Tabs, TabsList, TabsTrigger } from '~/components/ui/tabs'
+import { Badge } from '~/components/ui/badge'
 
 import type { Vector3, NaturalItem, Unit } from '~/types'
 
@@ -54,6 +56,14 @@ export const Feed = ({ images }: Props) => {
 
   return (
     <div className="mx-auto flex h-full w-full max-w-4xl flex-col items-end justify-start gap-4">
+      <div className="flex w-full gap-2 flex-col items-start justify-center">
+        <h1 className="text-start text-lg  sm:text-2xl font-bold text-ctp-green">Earth</h1>
+
+        <p className="max-w-[340px] text-start text-sm lg:text-base text-ctp-text">
+          Daily natural color imagery of Earth from the EPIC camera onboard the DSCOVR spacecraft
+        </p>
+      </div>
+
       <div className="flex h-fit flex-wrap justify-between gap-1 rounded-lg bg-ctp-base p-2 md:gap-2">
         {images.map((e, idx) => (
           <Image
@@ -96,6 +106,11 @@ export const Feed = ({ images }: Props) => {
         </Swiper>
 
         <div className="w-full max-w-md rounded-lg bg-ctp-mantle p-4">
+          <div className="flex w-full justify-end">
+            <Badge className="text-sm lg:text-base">
+              {format(images[currentPhoto] ? new Date(images[currentPhoto].date) : new Date(), 'mm-dd-yyyy')}
+            </Badge>
+          </div>
           <Tabs onValueChange={(e) => setUnit(e)} defaultValue={unit} className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="km">Km</TabsTrigger>
