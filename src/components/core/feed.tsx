@@ -108,7 +108,7 @@ export const Feed = ({ images }: Props) => {
         <div className="w-full max-w-md rounded-lg bg-ctp-mantle p-4">
           <div className="flex w-full justify-end">
             <Badge className="text-sm lg:text-base">
-              {format(images[currentPhoto] ? new Date(images[currentPhoto].date) : new Date(), 'mm-dd-yyyy')}
+              {format(images[currentPhoto] ? new Date(images[currentPhoto].date) : new Date(), 'MM-dd-yyyy')}
             </Badge>
           </div>
           <Tabs onValueChange={(e) => setUnit(e)} defaultValue={unit} className="w-full">
