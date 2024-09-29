@@ -56,10 +56,10 @@ export const Feed = ({ images }: Props) => {
 
   return (
     <div className="mx-auto flex h-full w-full max-w-4xl flex-col items-end justify-start gap-4">
-      <div className="flex w-full gap-2 flex-col items-start justify-center">
-        <h1 className="text-start text-lg  sm:text-2xl font-bold text-ctp-green">Earth</h1>
+      <div className="flex w-full flex-col items-start justify-center gap-2">
+        <h1 className="text-start text-lg font-bold text-ctp-green sm:text-2xl">Earth</h1>
 
-        <p className="max-w-[340px] text-start text-sm lg:text-base text-ctp-text">
+        <p className="max-w-[340px] text-start text-sm text-ctp-text lg:text-base">
           Daily natural color imagery of Earth from the EPIC camera onboard the DSCOVR spacecraft
         </p>
       </div>
