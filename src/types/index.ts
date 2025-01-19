@@ -1,6 +1,12 @@
+import { ReactNode } from "react"
+
 type GeographicCoordinates = {
   latitude: number
   longitude: number
+}
+
+export type AppChildren = {
+  children: ReactNode
 }
 
 export type Vector3 = {

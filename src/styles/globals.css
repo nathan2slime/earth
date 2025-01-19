@@ -65,6 +65,8 @@
 
     user-select: none;
     -webkit-user-drag: none;
+
+    font-family: "Comic Neue", serif;
   }
 
   body {
